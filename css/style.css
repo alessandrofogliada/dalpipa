@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #f9f9f9;
+    background-image: url(/img/background.jpg);
+    background-size:cover;
+    color: #333;
+  }
+  
+  .header {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+  }
+  
+  .lang-switch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #eee;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .main-nav,
+  .sub-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #510000; 
+  }
+
+  .sub-nav{
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .sub-nav button.active {
+    background: #510000;
+    color: white;
+  }
+  
+  
+/* Nav principale - solo il bottone attivo è evidenziato */
+.main-nav button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff; /* testo bianco */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  .main-nav button.active {
+    background: #b10000;
+    color: white;
+  }
+  
+  /* Sub-nav rimane come bottone normale */
+  .sub-nav button {
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #510000;
+    cursor: pointer;
+  }
+  
+  
+  .nav-btn.active {
+    background: #b10000; /* rosso acceso */
+    color: white;
+  }
+  
+  .menu-content {
+    padding: 1rem;
+  }
+  
+  .menu-section {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .menu-section:first-child{
+    padding: 1rem;
+  }
+  
+  .menu-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #510000;
+  }
+  
+  .menu-item {
+    border-top: 1px solid #eee;
+  }
+  
+  .menu-item:first-child {
+    padding: 0.5rem 0;
+  }
+  
+  .menu-item .title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .menu-item .desc {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .menu-item .price {
+    float: right;
+    font-weight: bold;
+    color: #b10000;
+  }
+  
+  .menu-item .allergeni {
+    font-size: 0.75rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.3rem;
+  }
+
+  /* BADGE ALLERGENI */
+
+  .badge {
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    margin: 0.1em;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 0.25rem;
+  }
+  
+  .badge-glutine { background-color: #e74c3c; }   /* Rosso */
+  .badge-latte { background-color: #3498db; }     /* Blu */
+  .badge-uova { background-color: #f1c40f; }      /* Giallo */
+  .badge-pesce { background-color: #1abc9c; }     /* Verde acqua */
+  .badge-soia { background-color: #9b59b6; }      /* Viola */
+  .badge-frutta { background-color: #e67e22; }    /* Arancione */
+  .badge-sedano { background-color: #2ecc71; }    /* Verde */
+  .badge-solfiti { background-color: #95a5a6; }   /* Grigio */
+  .badge-senape { background-color: #d35400; }    /* Arancio scuro */
+  .badge-sesamo { background-color: #f39c12; }    /* Giallo scuro */
+  .badge-lupini { background-color: #7f8c8d; }    /* Grigio scuro */
+  .badge-molluschi { background-color: #16a085; } /* Verde petrolio */
+  .badge-crostacei { background-color: #c0392b; } /* Rosso scuro */
+  .badge-arachidi { background-color: #8e44ad; }  /* Viola scuro */
+  
+
+  
+  /* LOADER  */
+
+  .loader-text{
+    margin-top: 20px;
+  }
+
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(250, 248, 245, 0.9); /* colore sfondo leggero */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ccc;
+    border-top-color: #b10000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* PREZZI */
+
+  .prezzi-formati {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  

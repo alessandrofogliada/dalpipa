@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Digitale</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" style="background-color:#8B0000 ;">
+    <img src="img/logo.jpg" alt="logo agriturismo" style="width: 30%; border-radius: 50%;">
+    <h1 data-menu="welcome" style="color: white;"></h1>
+    <div class="lang-switch">IT</div>
+  </header>
+  
+  <!-- Categorie principali -->
+  <nav class="main-nav">
+    <button class="nav-btn active" data-cat="pizze" data-menu="cat_pizze">Pizze</button>
+    <button class="nav-btn" data-cat="cucina" data-menu="cat_cucina">Cucina</button>
+    <button class="nav-btn" data-cat="dolci" data-menu="cat_dolci">Dessert</button>
+    <button class="nav-btn" data-cat="vini" data-menu="cat_vini">Vini</button>
+    <button class="nav-btn" data-cat="birre" data-menu="cat_birre">Birre</button>
+  </nav>
+
+  <!-- Sottocategorie -->
+  <div class="sub-nav" id="sub-nav"></div>
+
+  <!-- Contenuto dinamico menu -->
+  <main class="menu-content" id="menu-content">
+    <!-- Generato da JS -->
+  </main>
+  
+<!-- Loader -->
+<div id="loader" class="loader-overlay">
+  <div class="spinner"></div>
+  <div class="loader-text" data-menu="loading">Caricamento del menu...</div>
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
