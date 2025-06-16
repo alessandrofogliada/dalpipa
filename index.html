@@ -9,19 +9,19 @@
 <body>
 
   <!-- Header -->
-  <header class="header" style="background-color:#8B0000 ;">
-    <img src="img/logo.jpg" alt="logo agriturismo" style="width: 30%; border-radius: 50%;">
+  <header class="header">
+    <img src="img/logo.png" alt="logo dal pipa" class="logo">
     <h1 data-menu="welcome" style="color: white;"></h1>
     <div class="lang-switch">IT</div>
   </header>
   
   <!-- Categorie principali -->
-  <nav class="main-nav">
-    <button class="nav-btn active" data-cat="pizze" data-menu="cat_pizze">Pizze</button>
+  <nav class="main-nav" style="justify-content: center;">
+    <button class="nav-btn active" data-cat="pizza" data-menu="cat_pizze">Pizze</button>
     <button class="nav-btn" data-cat="cucina" data-menu="cat_cucina">Cucina</button>
-    <button class="nav-btn" data-cat="dolci" data-menu="cat_dolci">Dessert</button>
-    <button class="nav-btn" data-cat="vini" data-menu="cat_vini">Vini</button>
-    <button class="nav-btn" data-cat="birre" data-menu="cat_birre">Birre</button>
+    <button class="nav-btn" data-cat="dessert" data-menu="cat_dolci">Dessert</button>
+    <!-- <button class="nav-btn" data-cat="vini" data-menu="cat_vini">Vini</button>
+    <button class="nav-btn" data-cat="birre" data-menu="cat_birre">Birre</button> -->
   </nav>
 
   <!-- Sottocategorie -->
@@ -34,8 +34,8 @@
   
 <!-- Loader -->
 <div id="loader" class="loader-overlay">
-  <div class="spinner"></div>
-  <div class="loader-text" data-menu="loading">Caricamento del menu...</div>
+  <img src="img/logo-spinner.svg" alt="logo" class="loader-logo">
+  <div class="loader-text" data-menu="loading"></div>
 </div>
 
   <script src="js/script.js"></script>

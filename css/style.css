@@ -1,18 +1,22 @@
+:root{
+  --primary:#000000;
+  --seconda\ry:#a98247;
+
+}
 body {
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     background: #f9f9f9;
-    background-image: url(/img/background.jpg);
     background-size:cover;
-    color: #333;
+    color: var(--primary);
   }
   
   .header {
-    background: #fff;
+    background: var(--primary);
     padding: 1rem;
     text-align: center;
-    border-bottom: 2px solid #ccc;
     position: relative;
+    border-bottom: 2px solid #ccc;
   }
   
   .lang-switch {
@@ -24,14 +28,19 @@ body {
     border-radius: 4px;
     font-size: 0.9rem;
   }
-  
+
+  .logo{
+    width:15% ;
+  }
+
   .main-nav,
   .sub-nav {
     display: flex;
     overflow-x: auto;
     gap: 0.5rem;
     padding: 0.5rem;
-    background: #510000; 
+    background: var(--primary);
+    border-bottom: 2px solid #ccc;
   }
 
   .sub-nav{
@@ -40,7 +49,7 @@ body {
   }
 
   .sub-nav button.active {
-    background: #510000;
+    background: var(--seconda\ry);
     color: white;
   }
   
@@ -60,20 +69,24 @@ body {
   }
   
   .main-nav button.active {
-    background: #b10000;
+    background: var(--seconda\ry);
     color: white;
   }
   
   /* Sub-nav rimane come bottone normale */
   .sub-nav button {
-    background: #fff;
+    background: var(--primary);
+    color: white;
     border: none;
     border-radius: 20px;
     padding: 0.5rem 1rem;
     font-weight: bold;
-    white-space: nowrap;
-    color: #510000;
+    white-space: nowrap;;
     cursor: pointer;
+  }
+
+  .sub-nav{
+    background-color: var(--seconda\ry);
   }
   
   
@@ -84,6 +97,7 @@ body {
   
   .menu-content {
     padding: 1rem;
+    background-color: var(--primary);
   }
   
   .menu-section {
@@ -99,7 +113,7 @@ body {
   .menu-section h2 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #510000;
+    color: var(--seconda\ry);
   }
   
   .menu-item {
@@ -123,7 +137,7 @@ body {
   .menu-item .price {
     float: right;
     font-weight: bold;
-    color: #b10000;
+    color: var(--seconda\ry);
   }
   
   .menu-item .allergeni {
@@ -182,19 +196,6 @@ body {
     z-index: 9999;
   }
   
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border: 5px solid #ccc;
-    border-top-color: #b10000;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
   /* PREZZI */
 
   .prezzi-formati {
@@ -204,5 +205,25 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2px;
+  }
+
+  /* LOADER  */
+ 
+   @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+  }
+  
+  .loader-logo {
+    animation: pulse 1.5s ease-in-out infinite;
+    width: 80%;
+  }
+
+
+  @media screen and (max-width: 768px) {
+   .logo{
+    width: 50% ;
+   }
+    
   }
   

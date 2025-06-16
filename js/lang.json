@@ -1,38 +1,70 @@
 {
-    "welcome": {
-      "it": "Benvenuti nel nostro ristorante",
-      "en": "Welcome to our restaurant",
-      "de": "Willkommen in unserem Restaurant"
+  "welcome": {
+    "it": "Benvenuti nel nostro ristorante",
+    "en": "Welcome to our restaurant",
+    "de": "Willkommen in unserem Restaurant"
+  },
+  "cat_pizze": {
+    "it": "Pizze",
+    "en": "Pizza",
+    "de": "Pizza"
+  },
+  "cat_cucina": {
+    "it": "Cucina",
+    "en": "Kitchen",
+    "de": "Küche"
+  },
+  "cat_dolci": {
+    "it": "Dessert",
+    "en": "Desserts",
+    "de": "Desserts"
+  },
+  "cat_vini": {
+    "it": "Vini",
+    "en": "Wines",
+    "de": "Weine"
+  },
+  "cat_birre": {
+    "it": "Birre",
+    "en": "Beers",
+    "de": "Biere"
+  },
+  "loading": {
+    "it": "Caricamento del menu...",
+    "en": "Loading the menu...",
+    "de": "Menü wird geladen..."
+  },
+
+  "subsections": {
+    "Insalate": {
+      "it": "Insalate",
+      "en": "Salads",
+      "de": "Salate"
     },
-    "cat_pizze": {
-      "it": "Pizze",
-      "en": "Pizza",
-      "de": "Pizza"
+    "Piatti freddi": {
+      "it": "Piatti freddi",
+      "en": "Cold dishes",
+      "de": "Kalte Gerichte"
     },
-    "cat_cucina": {
-      "it": "Cucina",
-      "en": "Kitchen",
-      "de": "Küche"
+    "Primi piatti": {
+      "it": "Primi piatti",
+      "en": "First courses",
+      "de": "Erste Gänge"
     },
-    "cat_dolci": {
-      "it": "Dessert",
-      "en": "Desserts",
-      "de": "Desserts"
+    "Sfiziosità": {
+      "it": "Sfiziosità",
+      "en": "Snacks",
+      "de": "Leckereien"
     },
-    "cat_vini": {
-      "it": "Vini",
-      "en": "Wines",
-      "de": "Weine"
+    "Piadine/Panini": {
+      "it": "Piadine/Panini",
+      "en": "Flatbreads/Sandwiches",
+      "de": "Piadine/Sandwiches"
     },
-    "cat_birre": {
-      "it": "Birre",
-      "en": "Beers",
-      "de": "Biere"
-    },
-    "loading": {
-      "it": "Caricamento del menu...",
-      "en": "Loading the menu...",
-      "de": "Menü wird geladen..."
+    "Contorni": {
+      "it": "Contorni",
+      "en": "Side dishes",
+      "de": "Beilagen"
     }
   }
-  
+}

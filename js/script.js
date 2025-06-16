@@ -5,16 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   
 
-  const menuURL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLheGJQjXmy-mQZYGxHzStzGWe1BOF_WkzuXumZvMUzyapcFeXRbUpXypSjnJL7YPXiv7hDF0y1F4JhBSws4lJf09OUnZkJzjZzD1mELsFUP5nb9Yi9VzbMXgzg5XOkbjqSsRfABhwi5yfzr0kF-SIfiGFM1_3Si-kVz5230kaW41vfBbVdFK8zHHhL1Sr1emckWk3l4w-q2b6FpfVx9HfRYAh1qqEJUoOv2aKQQOi6iV9E4NUDjO-0zOb0anvuQNcaoVJNvjmB3VV2EjLMSWJvDV2hfyQ&lib=MYp9KKoqISrgS2frH0npc3D3FZZAEnAtP";
+  const menuURL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhtdD4frSxKTXTFRFBJ0YSDaZVn5DhxDjcF9lgqiCW5Wd-Y22rOI95i-iuR9ZMyY02OD2XgwoHy85otmXxO4QRpxbCu8Kf3ZIc6NGQ5zjf6EQfIYmN3rVK5KFXKYLb5ABzyl0a4UBtLK6nUEfoSbfud7u2-rJQJvYxnjby1Y-xiKCmLREWWs-pUeZ621efMemArhhT-SwJO5HQxwxCv3-3XqGh53lPHBEDcUu7Ijtf4W11OvzkZ-1fqgT9Qo2TBgofArg5YIw-ywmC4ReC97nfy-wfUbw&lib=MFiAwBQnlmdOayOyO_4-LAT3FZZAEnAtP";
 
   let menuData = {};
   let currentLang = "it"; 
 
   loader.style.display = "flex";
 
+  function slugify(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // rimuove accenti
+      .replace(/\s+/g, '-') // spazi → trattini
+      .replace(/[^\w\-]+/g, '') // rimuove simboli strani
+      .replace(/\-\-+/g, '-') // doppio trattino
+      .trim();
+  }  
+
   fetch(menuURL)
   .then(res => res.json())
   .then(data => {
+    console.log("Dati ricevuti:", data);  // ⬅️ vedi cosa arriva
+
     for (const categoria in data) {
       const items = data[categoria];
       const catKey = categoria.toLowerCase();
@@ -54,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    renderSubNav("pizze");
+    renderSubNav("pizza");
     loader.style.display = "none";
   })
   .catch(err => {
@@ -127,13 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     subNav.style.display = "flex";
   
-    // 🔹 Aggiungi bottone "Tutte"
-    const allBtn = document.createElement("button");
-    allBtn.textContent = subSectionTranslations["Tutte"][currentLang];
-    allBtn.dataset.sub = "all";
-    allBtn.classList.add("active");
-    allBtn.onclick = () => renderMenuFlat(cat);
-    subNav.appendChild(allBtn);
   
     // 🔸 Aggiungi le sottosezioni reali
     data.sottosezioni.forEach(sub => {
@@ -144,7 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Rimuove active da tutti i bottoni e lo mette solo su quello cliccato
         subNav.querySelectorAll("button").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        renderMenu(cat, sub);
+        const el = document.getElementById("section-" + slugify(sub));
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       };
       subNav.appendChild(btn);
     });
@@ -162,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const items = data.piatti[sub];
       if (items?.length) {
         html += `
-          <div class="menu-section">
+           <div class="menu-section" id="section-${slugify(sub)}">
             ${sub !== "Senza sezione" ? `<h2>${subSectionTranslations[sub]?.[currentLang] || sub}</h2>` : ""}
             ${items.map(item => {
               const isBirra = cat === "birre";
@@ -340,7 +348,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "molluschi": { it: "Molluschi", en: "Molluscs", de: "Weichtiere" },
     "crostacei": { it: "Crostacei", en: "Crustaceans", de: "Krebstiere" },
     "arachidi": { it: "Arachidi", en: "Peanuts", de: "Erdnüsse" },
-    "nessun_allergene": { it: "Nessun allergene", en: "No allergens", de: "Keine Allergene" }
+    "nessun_allergene": { it: "Nessun allergene", en: "No allergens", de: "Keine Allergene" },
+    "Insalate": { it: "Insalate", en: "Salads", de: "Salate" },
+    "Piatti freddi": { it: "Piatti freddi", en: "Cold dishes", de: "Kalte Gerichte" },
+    "Primi piatti": { it: "Primi piatti", en: "First courses", de: "Erste Gänge" },
+    "Sfiziosità": { it: "Sfiziosità", en: "Snacks", de: "Leckereien" },
+    "Piadine/Panini": { it: "Piadine/Panini", en: "Flatbreads/Sandwiches", de: "Piadine/Sandwiches" },
+  
   };
   
     
