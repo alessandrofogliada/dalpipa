@@ -216,13 +216,17 @@ body {
   
   .loader-logo {
     animation: pulse 1.5s ease-in-out infinite;
-    width: 80%;
+    width: 30%;
   }
 
 
   @media screen and (max-width: 768px) {
    .logo{
     width: 50% ;
+   }
+
+   .loader-logo{
+    width: 80%;
    }
     
   }
