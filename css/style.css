@@ -2,6 +2,7 @@
   --primary:#000000;
   --seconda\ry:#a98247;
 
+  /* Settori principale  */
 }
 body {
     margin: 0;
@@ -11,13 +12,23 @@ body {
     color: var(--primary);
   }
   
-  .header {
+.header {
     background: var(--primary);
     padding: 1rem;
     text-align: center;
     position: relative;
     border-bottom: 2px solid #ccc;
   }
+
+footer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: var(--seconda\ry);
+  color: white;
+}
+
   
   .lang-switch {
     position: absolute;
@@ -157,6 +168,10 @@ body {
     font-weight: bold;
     color: #fff;
     border-radius: 0.25rem;
+  }
+
+  .badge_digriis{
+    width: 12%;
   }
   
   .badge-glutine { background-color: #e74c3c; }   /* Rosso */

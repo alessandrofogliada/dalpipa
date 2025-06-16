@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Logica Traduzioni 
   const langMap = {
     it: "🇮🇹 IT",
-    en: "🏴 EN",
+    en: "🇬🇧 EN",
     de: "🇩🇪 DE"
   };
   
